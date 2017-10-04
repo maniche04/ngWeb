@@ -48,3 +48,15 @@
   @include angular-material-theme($anms-black-theme);
   @include custom-components-theme($anms-black-theme);
 }
+
+* {
+  font-family: 'Cantarell' !important;
+}
+
+.fa {
+  font-family: 'FontAwesome' !important;
+}
+
+.material-icons {
+  font-family: 'Material Icons' !important;
+}
