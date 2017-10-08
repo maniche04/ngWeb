@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { CoreModule } from '@app/core';
-import { SharedModule } from '@app/shared';
+import { CoreModule } from '../core';
+import { SharedModule } from '../shared';
 
 import { TasksRoutingModule } from './tasks-routing.module';
 import { TasksComponent } from './components/tasks.component';

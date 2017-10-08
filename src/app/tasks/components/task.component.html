@@ -1,1 +1,14 @@
-A Single Task
+<md-card [ngClass]="animateOnRouteEnter">
+  <md-card-title><code>1.0</code>{{task.name}}</md-card-title>
+  <md-card-subtitle>
+    Modern powerful framework
+  </md-card-subtitle>
+  <md-card-actions>
+    <a md-button href="https://angular.io/docs/ts/latest/" target="_blank">
+      <i class="fa fa-book fa-lg"></i> Docs
+    </a>
+    <a md-button href="https://github.com/angular/angular" target="_blank">
+      <i class="fa fa-github fa-lg"></i> Github
+    </a>
+  </md-card-actions>
+</md-card>

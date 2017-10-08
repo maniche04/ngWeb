@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="animateOnRouteEnter">
     <div class="row">
       <div class="offset-md-2 col-md-8 entry">
         <anms-big-input placeholder="I am going to do..."
@@ -18,10 +18,7 @@
           </anms-big-input-action>
         </anms-big-input>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h2>
+      <h2>
           Todo List
           <button class="todos-filter" md-icon-button [mdMenuTriggerFor]="todosFilter">
             <md-icon>filter_list</md-icon>
@@ -49,29 +46,15 @@
             </md-chip>
           </md-chip-list>
         </h2>
-        <md-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
+    </div>
+    <div class="row">
+        <!-- <md-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
           <md-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></md-checkbox>
           <span class="todo-label" (click)="onToggleTodo(todo)">{{todo.name}}</span>
-        </md-card>
+        </md-card> -->
+        <anms-task *ngFor="let todo of filteredTodos" [task]="todo"  class="col-md-6 col-lg-4"></anms-task>
         <br>
         <br>
-      </div>
-      <div class="offset-md-1  col-md-5">
-        <h2>Todo Example</h2>
-        <p>
-          This is a classic <code>todo</code> example with support for
-          adding, toggling, removing and filtering of the todo items.
-        </p>
-        <p>
-          State handling is implemented using <code>ngrx</code> module
-          and support for lazy loaded reducers (this is a lazy loaded feature module).
-        </p>
-        <p>
-          Todos are persisted into local storage so you should see your todos
-          also on later visits when using the same browser.
-        </p>
-        <br>
-      </div>
     </div>
 
   </div>

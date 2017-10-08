@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
@@ -13,6 +13,7 @@ import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 })
 export class TaskComponent implements OnInit, OnDestroy {
 
+  @Input() task: any;
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
