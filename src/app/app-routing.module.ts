@@ -15,6 +15,9 @@ const routes: Routes = [
     path: 'examples',
     loadChildren: 'app/examples/examples.module#ExamplesModule',
   }, {
+    path: 'tasks',
+    loadChildren: 'app/tasks/tasks.module#TasksModule',
+  }, {
     path: '**',
     redirectTo: 'about'
   }
@@ -22,7 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   // useHash supports github.io demo page, remove in your app
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

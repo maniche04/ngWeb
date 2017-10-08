@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 
 import { LocalStorageService } from './local-storage/local-storage.service';
@@ -23,6 +24,9 @@ export function getInitialState() {
       auth: authReducer
     }, { initialState: getInitialState }),
     EffectsModule.forRoot([AuthEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25 //  Retains last 25 states
+    })
   ],
   declarations: [],
   providers: [LocalStorageService]
